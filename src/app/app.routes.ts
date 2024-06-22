@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
 import { CharactersComponent } from './features/characters/characters.component';
 import { EpisodesComponent } from './features/episodes/episodes.component';
+import { CharacterDetailsComponent } from './features/characters/character-details/character-details.component';
 
 export const routes: Routes = [
-  { 'path': '', component: CharactersComponent },
+  { path: '', redirectTo: '/characters', pathMatch: 'full' },
+  { path: 'characters', component: CharactersComponent },
+  { path: 'characters/:id', component: CharacterDetailsComponent },
   { 'path': 'episodes', component: EpisodesComponent }
 ];
 

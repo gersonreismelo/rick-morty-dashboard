@@ -1,0 +1,71 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #ecf0f1;
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e74c3c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .character-info {
+    margin-bottom: 20px;
+
+    p {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: #bdc3c7;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    // Estilizando os títulos das informações do personagem
+    strong {
+      color: #e74c3c;  // Cor diferente para os títulos
+    }
+  }
+
+  .episodes {
+    margin-bottom: 20px;
+
+    .episode-label {
+      font-weight: bolder;
+      color: #3498db;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2em;
+      color: #bdc3c7;
+
+      li {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .created-info {
+    font-size: 1em;
+    color: #95a5a6;
+  }
+}

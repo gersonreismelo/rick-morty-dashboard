@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { CharactersService } from './../service/characters.service';
-import { Characters } from './characters.model';
+import { Characters } from './models/characters.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -16,7 +17,7 @@ export class CharactersComponent implements OnInit {
   totalPages = 1;
   isLoading = false;
 
-  constructor(private charactersService: CharactersService) { }
+  constructor(private charactersService: CharactersService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadCharacters();
@@ -54,4 +55,9 @@ export class CharactersComponent implements OnInit {
       );
   }
 
+  viewCharacterDetails(characterId: number | undefined): void {
+    if (characterId !== undefined) {
+      this.router.navigate(['/characters', characterId]);
+    }
+  }
 }

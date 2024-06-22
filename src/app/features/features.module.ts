@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CharactersComponent } from './characters/characters.component';
 import { EpisodesComponent } from './episodes/episodes.component';
+import { CharacterDetailsComponent } from './characters/character-details/character-details.component';
 
 
 @NgModule({
   declarations: [
     CharactersComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    CharacterDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { EpisodesComponent } from './episodes/episodes.component';
   ],
   exports: [
     CharactersComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    CharacterDetailsComponent
   ]
 })
 export class FeaturesModule { }

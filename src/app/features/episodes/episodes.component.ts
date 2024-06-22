@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { CharactersService } from './../service/characters.service';
-import { Episodes } from './episodes.modal';
+import { Episodes } from './model/episodes.modal';
 import { EpisodesService } from '../service/episodes.service';
 
 @Component({
