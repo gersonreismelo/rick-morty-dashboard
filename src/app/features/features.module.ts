@@ -2,18 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CharactersComponent } from './characters/characters.component';
+import { EpisodesComponent } from './episodes/episodes.component';
 
 
 @NgModule({
   declarations: [
-    CharactersComponent
+    CharactersComponent,
+    EpisodesComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule 
+    HttpClientModule
   ],
   exports: [
-    CharactersComponent
+    CharactersComponent,
+    EpisodesComponent
   ]
 })
 export class FeaturesModule { }

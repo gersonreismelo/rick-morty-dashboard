@@ -1,25 +1,27 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { CharactersService } from './../service/characters.service';
-import { Characters } from './characters.model';
+import { Episodes } from './episodes.modal';
+import { EpisodesService } from '../service/episodes.service';
 
 @Component({
-  selector: 'app-characters',
-  templateUrl: './characters.component.html',
-  styleUrls: ['./characters.component.scss']
+  selector: 'app-episodes',
+  templateUrl: './episodes.component.html',
+  styleUrl: './episodes.component.scss'
 })
-export class CharactersComponent implements OnInit {
+export class EpisodesComponent
+implements OnInit {
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
-  personagens: Characters[] = [];
+  episodes: Episodes[] = [];
   currentPage = 1;
   totalPages = 1;
   isLoading = false;
 
-  constructor(private charactersService: CharactersService) { }
+  constructor(private episodeService: EpisodesService) { }
 
   ngOnInit(): void {
-    this.loadCharacters();
+    this.loadEpisodes();
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -33,22 +35,22 @@ export class CharactersComponent implements OnInit {
     const scrollBottom = scrollHeight - scrollTop - clientHeight;
 
     if (scrollBottom < 200) {
-      this.loadCharacters();
+      this.loadEpisodes();
     }
   }
 
-  loadCharacters(): void {
+  loadEpisodes(): void {
     this.isLoading = true;
-    this.charactersService.obterPersonagens(this.currentPage)
+    this.episodeService.obterEpisodes(this.currentPage)
       .subscribe(
         response => {
-          this.personagens.push(...response.results);
+          this.episodes.push(...response.results);
           this.totalPages = response.info.pages + 1;
           this.currentPage++;
           this.isLoading = false;
         },
         error => {
-          console.error('Erro ao carregar personagens:', error);
+          console.error('Erro ao carregar episodes:', error);
           this.isLoading = false;
         }
       );

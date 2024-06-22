@@ -1,0 +1,15 @@
+<div class="container" #scrollContainer>
+  <header>
+    <div class="top">
+      <h1>All Rick And Morty Episodes</h1>
+    </div>
+  </header>
+
+  <div class="episodes-list">
+    <div *ngFor="let episode of episodes" class="episode-card">
+      <h2>{{ episode.name }}</h2>
+      <p>Air date: {{ episode.air_date }}</p>
+      <p>Episode: {{ episode.episode }}</p>
+    </div>
+  </div>
+</div>
