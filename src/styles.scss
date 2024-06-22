@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-image: url('./assets/img/rick-and-morty-garage-lab.jpg'); /* Caminho para a sua imagem de fundo */
+  background-size: cover; /* Cobrir todo o elemento com a imagem */
+  background-position: center; /* Posiciona a imagem no centro do elemento */
+  min-height: 100vh; /* Altura mínima da tela inteira */
+  margin: 0; /* Remove margens padrão do body */
+  font-family: Arial, sans-serif; /* Fonte padrão para o aplicativo */
+  color: #333; /* Cor padrão do texto */
+}

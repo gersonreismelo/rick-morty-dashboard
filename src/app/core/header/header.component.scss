@@ -1,0 +1,40 @@
+// Estilos para o mat-toolbar e seus elementos
+.custom-toolbar {
+  background-color: #78866B; // Cor de fundo do mat-toolbar
+  color: white; // Cor do texto no mat-toolbar
+  height: 64px; // Altura do mat-toolbar
+  padding: 0 16px; // Espaçamento interno
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Sombra
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    img {
+      max-height: 150px; // Altura máxima da logo
+      margin-right: 12px; // Espaçamento à direita da logo
+      cursor: pointer; // Altera o cursor para indicador de clique
+    }
+  }
+
+  .menu-comum {
+    .botao {
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 14px;
+      margin-left: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #ffc107; // Cor ao passar o mouse
+      }
+    }
+  }
+}
