@@ -33,6 +33,46 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
 
+  .search-bar {
+    position: relative;
+    margin-bottom: 20px;
+  
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: $border-radius;
+      background-color: $primary-color;
+      color: $text-color;
+      font-size: 1rem;
+      box-shadow: $box-shadow;
+      transition: box-shadow 0.3s ease;
+  
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 8px $accent-color;
+      }
+  
+      &::placeholder {
+        color: rgba($text-color, 0.7);
+      }
+    }
+  
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba($text-color, 0.7);
+      cursor: pointer;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
   .characters-list {
     display: flex;
     flex-wrap: wrap;

@@ -1,18 +1,21 @@
+// episodes.component.ts
+
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Services } from '../service/services';
-import { Episodes } from './model/episodes.modal';
+import { Episodes } from './model/episodes.modal'
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-episodes',
   templateUrl: './episodes.component.html',
-  styleUrl: './episodes.component.scss'
+  styleUrls: ['./episodes.component.scss']
 })
 export class EpisodesComponent implements OnInit {
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
   episodes: Episodes[] = [];
+  filteredEpisodes: Episodes[] = [];
   currentPage = 1;
   totalPages = 1;
   isLoading = false;
@@ -44,12 +47,13 @@ export class EpisodesComponent implements OnInit {
       .subscribe(
         response => {
           this.episodes.push(...response.results);
+          this.filteredEpisodes = this.episodes; // Inicialmente, mostrar todos os episódios
           this.totalPages = response.info.pages + 1;
           this.currentPage++;
           this.isLoading = false;
         },
         error => {
-          console.error('Erro ao carregar episodes:', error);
+          console.error('Erro ao carregar episódios:', error);
           this.isLoading = false;
         }
       );
@@ -59,6 +63,13 @@ export class EpisodesComponent implements OnInit {
     if (episodeId !== undefined) {
       this.router.navigate(['/episode', episodeId]);
     }
+  }
+
+  performSearch(event: Event): void {
+    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase().trim();
+    this.filteredEpisodes = this.episodes.filter(episode =>
+      episode.name.toLowerCase().includes(searchTerm)
+    );
   }
 
 }

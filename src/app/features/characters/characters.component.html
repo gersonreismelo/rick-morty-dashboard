@@ -4,11 +4,16 @@
   <header>
     <div class="top">
       <h1>All Rick And Morty Characters</h1>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search characters..." (input)="performSearch($event)">
+
+      </div>
     </div>
   </header>
 
   <div class="characters-list">
-    <div *ngFor="let character of personagens" class="character-card" (click)="viewCharacterDetails(character.id)">
+    <div *ngFor="let character of filteredPersonagens" class="character-card" (click)="viewCharacterDetails(character.id)">
       <h2>{{ character.name }}</h2>
       <img [src]="character.image" alt="{{ character.name }} image">
       <p>Status: {{ character.status }}</p>

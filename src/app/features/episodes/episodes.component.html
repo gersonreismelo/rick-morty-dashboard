@@ -4,11 +4,16 @@
   <header>
     <div class="top">
       <h1>All Rick And Morty Episodes</h1>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search episodes..." (input)="performSearch($event)">
+
+      </div>
     </div>
   </header>
 
   <div class="episodes-list">
-    <div *ngFor="let episode of episodes" class="episode-card" (click)="viewEpisodeDetails(episode.id)">
+    <div *ngFor="let episode of filteredEpisodes" class="episode-card" (click)="viewEpisodeDetails(episode.id)">
       <h2>{{ episode.name }}</h2>
       <p>Air date: {{ episode.air_date }}</p>
       <p>Episode: {{ episode.episode }}</p>

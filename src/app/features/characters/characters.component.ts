@@ -1,3 +1,5 @@
+// characters.component.ts
+
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Services } from '../service/services';
 import { Characters } from './models/characters.model';
@@ -13,6 +15,7 @@ export class CharactersComponent implements OnInit {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
   personagens: Characters[] = [];
+  filteredPersonagens: Characters[] = [];
   currentPage = 1;
   totalPages = 1;
   isLoading = false;
@@ -44,6 +47,7 @@ export class CharactersComponent implements OnInit {
       .subscribe(
         response => {
           this.personagens.push(...response.results);
+          this.filteredPersonagens = this.personagens; // Inicialmente, mostrar todos os personagens
           this.totalPages = response.info.pages + 1;
           this.currentPage++;
           this.isLoading = false;
@@ -60,4 +64,12 @@ export class CharactersComponent implements OnInit {
       this.router.navigate(['/characters', characterId]);
     }
   }
+
+  performSearch(event: Event): void {
+    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase().trim();
+    this.filteredPersonagens = this.personagens.filter(character =>
+      character.name.toLowerCase().includes(searchTerm)
+    );
+  }
+  
 }
