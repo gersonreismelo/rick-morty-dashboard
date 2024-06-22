@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { CharactersService } from './../service/characters.service';
+import { Services } from '../service/services';
 import { Characters } from './models/characters.model';
 import { Router } from '@angular/router';
 
@@ -17,7 +17,7 @@ export class CharactersComponent implements OnInit {
   totalPages = 1;
   isLoading = false;
 
-  constructor(private charactersService: CharactersService, private router: Router) { }
+  constructor(private services: Services, private router: Router) { }
 
   ngOnInit(): void {
     this.loadCharacters();
@@ -40,7 +40,7 @@ export class CharactersComponent implements OnInit {
 
   loadCharacters(): void {
     this.isLoading = true;
-    this.charactersService.obterPersonagens(this.currentPage)
+    this.services.obterPersonagens(this.currentPage)
       .subscribe(
         response => {
           this.personagens.push(...response.results);

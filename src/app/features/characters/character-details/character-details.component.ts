@@ -1,6 +1,4 @@
-// character-details.component.ts
-
-import { CharactersService } from './../../service/characters.service';
+import { Services } from '../../service/services';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Characters } from '../models/characters.model';
@@ -18,13 +16,13 @@ export class CharacterDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private charactersService: CharactersService
+    private services: Services
   ) { }
 
   ngOnInit(): void {
     const characterId = +this.route.snapshot.params['id'];
     if (characterId) {
-      this.charactersService.obterPersonagem(characterId).subscribe(
+      this.services.obterPersonagem(characterId).subscribe(
         character => {
           this.character = character;
           this.loadEpisodes(character.episode);
@@ -35,7 +33,7 @@ export class CharacterDetailsComponent implements OnInit {
   }
 
   loadEpisodes(episodeUrls: string[]): void {
-    this.charactersService.obterEpisodios(episodeUrls).subscribe(
+    this.services.obterEpisodios(episodeUrls).subscribe(
       episodes => this.episodes = episodes,
       error => console.error('Erro ao carregar episódios:', error)
     );

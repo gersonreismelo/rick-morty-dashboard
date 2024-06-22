@@ -1,3 +1,4 @@
+import { EpisodeDetailsComponent } from './episodes/episode-details/episode-details.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,7 +11,8 @@ import { CharacterDetailsComponent } from './characters/character-details/charac
   declarations: [
     CharactersComponent,
     EpisodesComponent,
-    CharacterDetailsComponent
+    CharacterDetailsComponent,
+    EpisodeDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { CharacterDetailsComponent } from './characters/character-details/charac
   exports: [
     CharactersComponent,
     EpisodesComponent,
-    CharacterDetailsComponent
+    CharacterDetailsComponent,
+    EpisodeDetailsComponent
   ]
 })
 export class FeaturesModule { }

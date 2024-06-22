@@ -1,15 +1,14 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { CharactersService } from './../service/characters.service';
+import { Services } from '../service/services';
 import { Episodes } from './model/episodes.modal';
-import { EpisodesService } from '../service/episodes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-episodes',
   templateUrl: './episodes.component.html',
   styleUrl: './episodes.component.scss'
 })
-export class EpisodesComponent
-implements OnInit {
+export class EpisodesComponent implements OnInit {
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
@@ -18,7 +17,7 @@ implements OnInit {
   totalPages = 1;
   isLoading = false;
 
-  constructor(private episodeService: EpisodesService) { }
+  constructor(private episodeService: Services, private router: Router) { }
 
   ngOnInit(): void {
     this.loadEpisodes();
@@ -54,6 +53,12 @@ implements OnInit {
           this.isLoading = false;
         }
       );
+  }
+
+  viewEpisodeDetails(episodeId: number | undefined): void {
+    if (episodeId !== undefined) {
+      this.router.navigate(['/episode', episodeId]);
+    }
   }
 
 }

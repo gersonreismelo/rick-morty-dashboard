@@ -1,0 +1,30 @@
+<!-- episode-details.component.html -->
+
+<div class="container" *ngIf="episode">
+  <header>
+    <div class="top">
+      <h1>Episode Details</h1>
+    </div>
+  </header>
+
+  <div class="episode-details">
+    <h2>{{ episode.name }}</h2>
+    <p>Air Date: {{ episode.air_date }}</p>
+    <p>Episode: {{ episode.episode }}</p>
+  </div>
+
+  <div class="characters-list" *ngIf="characters.length > 0">
+    <h3>Characters in this Episode:</h3>
+    <div class="character-card-container">
+      <div class="character-card" *ngFor="let character of characters">
+        <h4>{{ character.name }}</h4>
+        <img [src]="character.image" alt="{{ character.name }} image">
+      </div>
+    </div>
+  </div>
+
+  <div class="no-characters" *ngIf="characters.length === 0">
+    <p>No characters found for this episode.</p>
+  </div>
+
+</div>

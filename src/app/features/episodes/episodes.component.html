@@ -1,3 +1,5 @@
+<!-- episodes.component.html -->
+
 <div class="container" #scrollContainer>
   <header>
     <div class="top">
@@ -6,7 +8,7 @@
   </header>
 
   <div class="episodes-list">
-    <div *ngFor="let episode of episodes" class="episode-card">
+    <div *ngFor="let episode of episodes" class="episode-card" (click)="viewEpisodeDetails(episode.id)">
       <h2>{{ episode.name }}</h2>
       <p>Air date: {{ episode.air_date }}</p>
       <p>Episode: {{ episode.episode }}</p>
