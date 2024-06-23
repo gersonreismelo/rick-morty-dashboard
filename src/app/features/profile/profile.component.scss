@@ -1,0 +1,46 @@
+/* profile.component.scss */
+
+$primary-color: #1e1e1e;
+$secondary-color: #2d2d2d;
+$accent-color: #61dafb;
+$text-color: #f5f5f5;
+$border-radius: 8px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.profile-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: $border-radius;
+  background-color: $primary-color;
+  color: $text-color;
+  box-shadow: $box-shadow;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+    color: $accent-color;
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    border: none;
+    background-color: $accent-color;
+    color: $primary-color;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+}

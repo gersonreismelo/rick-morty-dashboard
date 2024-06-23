@@ -1,0 +1,8 @@
+<div class="menu-container">
+  <nav>
+    <ul>
+      <li><a routerLink="/profile">Profile</a></li>
+      <li *ngIf="loggedInUser"><span>{{ loggedInUser }}</span> | <a (click)="logout()">Logout</a></li>
+    </ul>
+  </nav>
+</div>

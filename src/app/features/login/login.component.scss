@@ -1,0 +1,87 @@
+/* login.component.scss */
+
+$primary-color: #1e1e1e;
+$secondary-color: #2d2d2d;
+$accent-color: #61dafb;
+$text-color: #f5f5f5;
+$error-color: #ff6b6b;
+$border-radius: 8px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: $border-radius;
+  background-color: $primary-color;
+  color: $text-color;
+  box-shadow: $box-shadow;
+  text-align: center;
+  position: relative; /* Permite posicionar a imagem */
+
+  .login-image {
+    position: absolute;
+    left: -352px;
+    top: -293px;
+    max-height: 700px; /* Ajusta a altura máxima da imagem */
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    color: $accent-color;
+    font-size: 1.5rem;
+  }
+
+  form {
+    margin-top: 60px; /* Ajusta o espaçamento entre a imagem e o formulário */
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: $border-radius;
+        border: 1px solid $secondary-color;
+        background-color: $secondary-color;
+        color: $text-color;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+
+        &:focus {
+          outline: none;
+          border-color: $accent-color;
+        }
+      }
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      border-radius: $border-radius;
+      border: none;
+      background-color: $accent-color;
+      color: $primary-color;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+
+    .error-message {
+      color: $error-color;
+      margin-top: 10px;
+    }
+  }
+}

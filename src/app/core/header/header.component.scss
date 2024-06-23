@@ -1,10 +1,9 @@
-// Estilos para o mat-toolbar e seus elementos
 .custom-toolbar {
-  background-color: #78866B; // Cor de fundo do mat-toolbar
-  color: white; // Cor do texto no mat-toolbar
-  height: 64px; // Altura do mat-toolbar
-  padding: 0 16px; // Espaçamento interno
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Sombra
+  background-color: #78866B;
+  color: white;
+  height: 64px;
+  padding: 0 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,13 +15,16 @@
     color: inherit;
 
     img {
-      max-height: 150px; // Altura máxima da logo
-      margin-right: 12px; // Espaçamento à direita da logo
-      cursor: pointer; // Altera o cursor para indicador de clique
+      max-height: 150px;
+      margin-right: 12px;
+      cursor: pointer;
     }
   }
 
   .menu-comum {
+    display: flex;
+    align-items: center;
+
     .botao {
       background-color: transparent;
       border: none;
@@ -31,10 +33,23 @@
       margin-left: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
+      padding: 3px;
 
       &:hover {
-        color: #ffc107; // Cor ao passar o mouse
+        color: #ffc107;
+        text-decoration: none; /* Remove o sublinhado ao passar o mouse */
       }
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      .profile-img {
+        width: 32px; /* Ajuste o tamanho da imagem conforme necessário */
+        height: 32px; /* Ajuste o tamanho da imagem conforme necessário */
+        border-radius: 50%; /* Torna a imagem redonda */
+        }
     }
   }
 }
