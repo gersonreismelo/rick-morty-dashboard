@@ -2,9 +2,15 @@
   <a class="navbar-brand" routerLink="/characters">
     <img src="../../../assets/img/logo_rickmorty.png" alt="Logo">
   </a>
-  <nav class="menu-comum">
+  <button class="hamburger-button" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <nav class="menu-comum" [class.visible]="isMenuVisible">
     <span *ngIf="loggedInUser" class="user-info">
-      <button class="botao" routerLink="/profile"> <img class="profile-img" src="../../../assets/img/usuario.png" alt="Foto de perfil do usuário"> {{ loggedInUser }}</button>  
+      <button class="botao" routerLink="/profile">
+        <img class="profile-img"  src="../../../assets/img/usuario.png" alt="Foto de perfil do usuário">
+        {{ loggedInUser }}
+      </button>
     </span>
     <button routerLink="/characters" class="botao">Personagens</button>
     <button routerLink="/episodes" class="botao">Episódios</button>

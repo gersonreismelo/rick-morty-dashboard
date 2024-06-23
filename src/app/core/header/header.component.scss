@@ -25,6 +25,18 @@ $button-hover-color: #ffc107;
     }
   }
 
+  .hamburger-button {
+    display: none;
+    background: none;
+    border: none;
+    color: $toolbar-text-color;
+    cursor: pointer;
+
+    mat-icon {
+      font-size: 24px;
+    }
+  }
+
   .menu-comum {
     display: flex;
     align-items: center;
@@ -54,6 +66,34 @@ $button-hover-color: #ffc107;
         height: 32px;
         border-radius: 50%;
       }
+    }
+
+    &.visible {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background-color: $toolbar-bg-color;
+      z-index: 1000;
+
+      .botao {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-toolbar {
+    .menu-comum {
+      display: none;
+    }
+
+    .hamburger-button {
+      display: block;
     }
   }
 }

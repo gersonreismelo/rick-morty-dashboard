@@ -117,4 +117,16 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       color: $text-color;
     }
   }
+
+  @media (max-width: 768px) {
+    .character-card {
+      width: calc(50% - 20px); 
+    }
+  }
+
+  @media (max-width: 480px) {
+    .character-card {
+      width: calc(100% - 20px); 
+    }
+  }
 }
