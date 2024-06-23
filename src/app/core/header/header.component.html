@@ -12,8 +12,8 @@
         {{ loggedInUser }}
       </button>
     </span>
-    <button routerLink="/characters" class="botao">Personagens</button>
-    <button routerLink="/episodes" class="botao">Episódios</button>
+    <button routerLink="/characters" class="botao">Character</button>
+    <button routerLink="/episodes" class="botao">Episodes</button>
     <span *ngIf="loggedInUser" class="user-info">
       <button (click)="logout()" class="botao">Logout</button>
     </span>

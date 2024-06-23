@@ -1,27 +1,96 @@
-# RickMortyDashboard
+# Rick and Morty Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+Este é um projeto Angular que cria um painel para visualizar informações sobre personagens e episódios da série "Rick and Morty" usando a API pública [Rick and Morty API](https://rickandmortyapi.com/).
 
-## Development server
+<h1>
+    <img src="public/img_1.png">
+    <img src="public/img_2.png">
+    <img src="public/img_3.png ">
+</h1>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+- Visualização de todos os personagens e episódios.
+- Pesquisa de personagens e episódios.
+- Visualização de detalhes de um personagem ou episódio específico.
+- Login e logout com autenticação simulada.
+- Navegação protegida por guarda de autenticação.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Estrutura do Projeto
 
-## Build
+### Módulos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **CoreModule**: Contém os componentes globais, como `Header` e `Footer`
+- **FeaturesModule**: Contém os componentes principais, como `CharactersComponent`, `EpisodesComponent`, `CharacterDetailsComponent` e `EpisodeDetailsComponent`.
 
-## Running unit tests
+### Serviços
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **AuthService**: Gerencia a autenticação do usuário.
+- **Services**: Fornece métodos para consumir a API Rick and Morty.
 
-## Running end-to-end tests
+### Componentes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **HeaderComponent**: Componente de cabeçalho com menu de navegação.
+- **FooterComponent**: Componente de rodapé.
+- **CharactersComponent**: Lista todos os personagens.
+- **EpisodesComponent**: Lista todos os episódios.
+- **CharacterDetailsComponent**: Exibe detalhes de um personagem.
+- **EpisodeDetailsComponent**: Exibe detalhes de um episódio.
 
-## Further help
+### Rotas
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+As rotas definidas para o projeto estão no arquivo `routes.ts`. Incluem:
+
+- `/characters`: Exibe a lista de personagens (protegida por autenticação).
+- `/characters/:id`: Exibe os detalhes de um personagem (protegida por autenticação).
+- `/episodes`: Exibe a lista de episódios (protegida por autenticação).
+- `/episode/:id`: Exibe os detalhes de um episódio (protegida por autenticação).
+- `/login`: Página de login.
+- `/profile`: Página de perfil do usuário (protegida por autenticação).
+- `**`: Redireciona para a página de login.
+
+## Pré-requisitos
+
+- Node.js
+- Angular CLI
+
+## Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/usuario/rick-morty-dashboard.git
+   cd rick-morty-dashboard
+   ```
+
+2. Instale as dependências:
+
+    ```bash
+    npm install
+    ```
+
+3. Inicie o servidor de desenvolvimento:
+
+    ```bash
+    npm start
+    ```
+
+4. Acesse o painel no navegador:
+
+    ```bash
+    http://localhost:4200
+    ```
+
+
+## Dependências
+
+- Angular
+- Angular Material
+- Bootstrap
+- RxJS
+
+## Autor
+ Gerson dos Reis de Melo
+
+## Licença
+Este projeto é licenciado sob os termos da [LICENSE  MIT](./LICENSE).
