@@ -59,7 +59,7 @@ As rotas definidas para o projeto estão no arquivo `routes.ts`. Incluem:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/usuario/rick-morty-dashboard.git
+   git clone https://github.com/gersonreismelo/rick-morty-dashboard
    cd rick-morty-dashboard
    ```
 
