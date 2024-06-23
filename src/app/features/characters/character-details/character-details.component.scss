@@ -1,19 +1,28 @@
+$primary-color: #2c3e50;
+$secondary-color: #e74c3c;
+$accent-color: #3498db;
+$text-color: #ecf0f1;
+$text-color-light: #bdc3c7;
+$text-color-muted: #95a5a6;
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-color: rgba(0, 0, 0, 0.5);
+
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #2c3e50;
+  background-color: $primary-color;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #ecf0f1;
+  box-shadow: 0 4px 8px $shadow-color;
+  color: $text-color;
 
   h2 {
     font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
-    color: #e74c3c;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid #e74c3c;
+    color: $secondary-color;
+    text-shadow: 2px 2px 4px $hover-color;
+    border-bottom: 2px solid $secondary-color;
     padding-bottom: 10px;
   }
 
@@ -30,16 +39,15 @@
     p {
       font-size: 1.2em;
       margin: 10px 0;
-      color: #bdc3c7;
+      color: $text-color-light;
 
       &:first-child {
         margin-top: 0;
       }
     }
 
-    // Estilizando os títulos das informações do personagem
     strong {
-      color: #e74c3c;  // Cor diferente para os títulos
+      color: $secondary-color;
     }
   }
 
@@ -48,7 +56,7 @@
 
     .episode-label {
       font-weight: bolder;
-      color: #3498db;
+      color: $accent-color;
       margin-bottom: 10px;
     }
 
@@ -56,7 +64,7 @@
       list-style: none;
       padding: 0;
       font-size: 1.2em;
-      color: #bdc3c7;
+      color: $text-color-light;
 
       li {
         margin: 5px 0;
@@ -66,6 +74,6 @@
 
   .created-info {
     font-size: 1em;
-    color: #95a5a6;
+    color: $text-color-muted;
   }
 }

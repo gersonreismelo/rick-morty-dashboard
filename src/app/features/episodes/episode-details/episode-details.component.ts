@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Characters } from '../../characters/models/characters.model';
 import { Episodes } from '../model/episodes.modal';
-import { Services } from '../../service/services'; // Importar o serviço correto aqui
+import { Services } from '../../service/services';
 
 @Component({
   selector: 'app-episode-details',
@@ -11,31 +11,31 @@ import { Services } from '../../service/services'; // Importar o serviço corret
 })
 export class EpisodeDetailsComponent implements OnInit {
 
-  episode: Episodes | undefined; // Renomeei de episodes para episode
+  episode: Episodes | undefined; 
   characters: Characters[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private charactersService: Services // Certifique-se de importar o serviço correto aqui
+    private charactersService: Services 
   ) { }
 
   ngOnInit(): void {
     const episodeId = +this.route.snapshot.params['id'];
     if (episodeId) {
-      this.charactersService.obterEpisodio(episodeId).subscribe(
+      this.charactersService.getEpisodeId(episodeId).subscribe(
         episode => {
-          this.episode = episode; // Atribuir o episódio retornado
-          this.loadCharacters(episode.characters); // Chamar o método correto
+          this.episode = episode; 
+          this.loadCharacters(episode.characters); 
         },
-        error => console.error('Erro ao carregar episódio:', error)
+        error => console.error('Error loading episode:', error)
       );
     }
   }
 
   loadCharacters(characterUrls: string[]): void {
-    this.charactersService.obterPersonagensUrl(characterUrls).subscribe(
+    this.charactersService.getCharactersUrl(characterUrls).subscribe(
       characters => this.characters = characters,
-      error => console.error('Erro ao carregar personagens:', error)
+      error => console.error('Error loading characters:', error)
     );
   }
 

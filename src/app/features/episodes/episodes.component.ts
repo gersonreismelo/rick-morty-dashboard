@@ -1,5 +1,3 @@
-// episodes.component.ts
-
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Services } from '../service/services';
 import { Episodes } from './model/episodes.modal'
@@ -43,11 +41,11 @@ export class EpisodesComponent implements OnInit {
 
   loadEpisodes(): void {
     this.isLoading = true;
-    this.episodeService.obterEpisodes(this.currentPage)
+    this.episodeService.getEpisodes(this.currentPage)
       .subscribe(
         response => {
           this.episodes.push(...response.results);
-          this.filteredEpisodes = this.episodes; // Inicialmente, mostrar todos os episódios
+          this.filteredEpisodes = this.episodes; 
           this.totalPages = response.info.pages + 1;
           this.currentPage++;
           this.isLoading = false;

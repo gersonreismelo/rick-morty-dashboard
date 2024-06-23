@@ -1,5 +1,3 @@
-<!-- characters.component.html -->
-
 <div class="container" #scrollContainer>
   <header>
     <div class="top">
@@ -13,7 +11,7 @@
   </header>
 
   <div class="characters-list">
-    <div *ngFor="let character of filteredPersonagens" class="character-card" (click)="viewCharacterDetails(character.id)">
+    <div *ngFor="let character of filteredCharacters" class="character-card" (click)="viewCharacterDetails(character.id)">
       <h2>{{ character.name }}</h2>
       <img [src]="character.image" alt="{{ character.name }} image">
       <p>Status: {{ character.status }}</p>

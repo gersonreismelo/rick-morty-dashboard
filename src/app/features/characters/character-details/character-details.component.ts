@@ -22,20 +22,20 @@ export class CharacterDetailsComponent implements OnInit {
   ngOnInit(): void {
     const characterId = +this.route.snapshot.params['id'];
     if (characterId) {
-      this.services.obterPersonagem(characterId).subscribe(
+      this.services.getCharacter(characterId).subscribe(
         character => {
           this.character = character;
           this.loadEpisodes(character.episode);
         },
-        error => console.error('Erro ao carregar personagem:', error)
+        error => console.error('Error loading character:', error)
       );
     }
   }
 
   loadEpisodes(episodeUrls: string[]): void {
-    this.services.obterEpisodios(episodeUrls).subscribe(
+    this.services.getEpisodesUrl(episodeUrls).subscribe(
       episodes => this.episodes = episodes,
-      error => console.error('Erro ao carregar episódios:', error)
+      error => console.error('Error loading episodes:', error)
     );
   }
 }

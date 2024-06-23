@@ -2,7 +2,6 @@
   <h2>{{ character.name }}</h2>
   <img [src]="character.image" alt="{{ character.name }} image">
 
-  <!-- Character Information -->
   <div class="character-info" *ngIf="character.status || character.species || character.type || character.gender || character.origin || character.location">
     <p *ngIf="character.status"><strong>Status:</strong> {{ character.status }}</p>
     <p *ngIf="character.species"><strong>Species:</strong> {{ character.species }}</p>
@@ -12,10 +11,9 @@
     <p *ngIf="character.location"><strong>Last known location:</strong> {{ character.location.name }}</p>
   </div>
 
-  <!-- Episodes -->
   <div class="episodes" *ngIf="episodes && episodes.length > 0">
     <p class="episode-label">Episodes:</p>
-    <ul>
+    <ul >
       <li *ngFor="let episode of episodes">{{ episode.name }}</li>
     </ul>
   </div>

@@ -1,5 +1,3 @@
-// characters.component.ts
-
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Services } from '../service/services';
 import { Characters } from './models/characters.model';
@@ -14,8 +12,8 @@ export class CharactersComponent implements OnInit {
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
-  personagens: Characters[] = [];
-  filteredPersonagens: Characters[] = [];
+  characters: Characters[] = [];
+  filteredCharacters: Characters[] = [];
   currentPage = 1;
   totalPages = 1;
   isLoading = false;
@@ -43,17 +41,17 @@ export class CharactersComponent implements OnInit {
 
   loadCharacters(): void {
     this.isLoading = true;
-    this.services.obterPersonagens(this.currentPage)
+    this.services.getCharacters(this.currentPage)
       .subscribe(
         response => {
-          this.personagens.push(...response.results);
-          this.filteredPersonagens = this.personagens; // Inicialmente, mostrar todos os personagens
+          this.characters.push(...response.results);
+          this.filteredCharacters = this.characters;
           this.totalPages = response.info.pages + 1;
           this.currentPage++;
           this.isLoading = false;
         },
         error => {
-          console.error('Erro ao carregar personagens:', error);
+          console.error('Error loading characters:', error);
           this.isLoading = false;
         }
       );
@@ -67,7 +65,7 @@ export class CharactersComponent implements OnInit {
 
   performSearch(event: Event): void {
     const searchTerm = (event.target as HTMLInputElement).value.toLowerCase().trim();
-    this.filteredPersonagens = this.personagens.filter(character =>
+    this.filteredCharacters = this.characters.filter(character =>
       character.name.toLowerCase().includes(searchTerm)
     );
   }

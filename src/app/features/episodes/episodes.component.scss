@@ -1,8 +1,6 @@
-/* characters.component.scss */
-
-$primary-color: #1e1e1e;
-$secondary-color: #2d2d2d;
-$accent-color: #61dafb;
+$primary-color: #1e1e1e; 
+$secondary-color: #2d2d2d; 
+$accent-color: #61dafb; 
 $text-color: #f5f5f5;
 $border-radius: 8px;
 $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,16 +36,16 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 100%;
       padding: 12px;
       border: none;
-      border-radius: 8px;
-      background-color: #1e1e1e;
-      color: #f5f5f5;
+      border-radius: $border-radius;
+      background-color: $primary-color;
+      color: $text-color;
       font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: $box-shadow;
       transition: box-shadow 0.3s ease;
   
       &:focus {
         outline: none;
-        box-shadow: 0 0 8px #61dafb;
+        box-shadow: 0 0 8px $accent-color;
       }
   
       &::placeholder {
@@ -65,7 +63,7 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: color 0.3s ease;
   
       &:hover {
-        color: #61dafb;
+        color: $accent-color;
       }
     }
   }
@@ -82,12 +80,13 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     padding: 15px;
-    width: calc(33.333% - 20px); /* 3 episodes per row */
+    width: calc(33.333% - 20px); 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; 
 
     &:hover {
       transform: translateY(-5px);

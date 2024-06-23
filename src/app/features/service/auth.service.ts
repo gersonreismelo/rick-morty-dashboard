@@ -1,5 +1,3 @@
-// auth.service.ts
-
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 
@@ -12,26 +10,30 @@ export class AuthService {
   private readonly currentUserKey = 'currentUser';
 
   constructor() {
-    // Inicializa o BehaviorSubject com o valor do localStorage, se disponível
     const storedUser = localStorage.getItem(this.currentUserKey);
     this.loggedInUserSubject = new BehaviorSubject<string | null>(storedUser);
   }
 
   login(username: string, password: string): Observable<boolean> {
-    // Simplesmente retorna true para qualquer combinação de username e password
-    // Aqui você pode implementar lógica de validação de usuário (mock)
-    // Para efeitos de teste ou desenvolvimento, sempre retornamos true
-    this.loggedInUserSubject.next(username);
-    localStorage.setItem(this.currentUserKey, username); // Salva no localStorage
-    return of(true);
+    if (username && password) {
+      this.loggedInUserSubject.next(username);
+      localStorage.setItem(this.currentUserKey, username); 
+      return of(true);
+    } else {
+      return of(false);
+    }
   }
 
   logout(): void {
     this.loggedInUserSubject.next(null);
-    localStorage.removeItem(this.currentUserKey); // Remove do localStorage
+    localStorage.removeItem(this.currentUserKey); 
   }
 
   get loggedInUser(): Observable<string | null> {
     return this.loggedInUserSubject.asObservable();
+  }
+
+  isLoggedIn(): boolean {
+    return this.loggedInUserSubject.value !== null;
   }
 }

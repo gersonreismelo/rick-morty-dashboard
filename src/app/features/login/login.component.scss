@@ -1,5 +1,3 @@
-/* login.component.scss */
-
 $primary-color: #1e1e1e;
 $secondary-color: #2d2d2d;
 $accent-color: #61dafb;
@@ -17,13 +15,13 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: $text-color;
   box-shadow: $box-shadow;
   text-align: center;
-  position: relative; /* Permite posicionar a imagem */
+  position: relative; 
 
   .login-image {
     position: absolute;
     left: -352px;
     top: -293px;
-    max-height: 700px; /* Ajusta a altura máxima da imagem */
+    max-height: 700px; 
   }
 
   h2 {
@@ -33,7 +31,7 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   form {
-    margin-top: 60px; /* Ajusta o espaçamento entre a imagem e o formulário */
+    margin-top: 60px; 
 
     .form-group {
       margin-bottom: 15px;

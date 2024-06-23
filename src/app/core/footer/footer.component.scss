@@ -1,12 +1,12 @@
+$footer-bg-color: #78866B;
+
 footer {
-  background-color: #78866B; // Cor de fundo roxa
-  color: white; // Cor do texto no footer
-  padding: 16px 0; // Espaçamento interno do footer
-  text-align: center; // Alinhamento do texto no centro
+  background-color: $footer-bg-color;
+  text-align: center;
 
   small {
-    display: block; // Garante que o texto de direitos autorais esteja em um bloco
-    margin: 0; // Remove margem padrão
-    font-size: 12px; // Tamanho da fonte do texto de direitos autorais
+    display: block;
+    margin: 0;
+    font-size: 12px;
   }
 }

@@ -1,6 +1,10 @@
+$toolbar-bg-color: #78866B;
+$toolbar-text-color: white;
+$button-hover-color: #ffc107;
+
 .custom-toolbar {
-  background-color: #78866B;
-  color: white;
+  background-color: $toolbar-bg-color;
+  color: $toolbar-text-color;
   height: 64px;
   padding: 0 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -28,7 +32,7 @@
     .botao {
       background-color: transparent;
       border: none;
-      color: white;
+      color: $toolbar-text-color;
       font-size: 14px;
       margin-left: 12px;
       cursor: pointer;
@@ -36,8 +40,8 @@
       padding: 3px;
 
       &:hover {
-        color: #ffc107;
-        text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+        color: $button-hover-color;
+        text-decoration: none;
       }
     }
 
@@ -46,10 +50,10 @@
       align-items: center;
 
       .profile-img {
-        width: 32px; /* Ajuste o tamanho da imagem conforme necessário */
-        height: 32px; /* Ajuste o tamanho da imagem conforme necessário */
-        border-radius: 50%; /* Torna a imagem redonda */
-        }
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
     }
   }
 }
